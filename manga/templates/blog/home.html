@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Trang chủ - Manga Reader{% endblock %}
+
+{% block content %}
+    <h1>Chào mừng đến với Manga Reader!</h1>
+    <p>Đọc truyện tranh miễn phí, cập nhật liên tục.</p>
+    <h2>Danh sách Manga mới nhất</h2>
+    <ul>
+        {% for manga in mangas %}
+            <li style="margin-bottom: 20px;">
+                <a href="{% url 'detail' manga.id %}">
+                    <img src="{{ manga.cover.url }}" alt="{{ manga.title }}" style="height:100px;vertical-align:middle;margin-right:10px;">
+                    {{ manga.title }}
+                </a>
+            </li>
+        {% empty %}
+            <li>Chưa có manga nào.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

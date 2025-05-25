@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Manga Reader{% endblock %}</title>
+    <style>
+        nav { background: #222; color: #fff; padding: 10px; }
+        nav a { color: #fff; margin-right: 20px; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Trang chủ</a>
+        <a href="/manga/">Manga</a>
+        <a href="/about/">Giới thiệu</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

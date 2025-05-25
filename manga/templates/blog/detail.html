@@ -1,0 +1,8 @@
+<h1>{{ manga.title }}</h1>
+<p>{{ manga.description }}</p>
+<h3>Chapters:</h3>
+<ul>
+    {% for chapter in manga.chapters.all %}
+        <li><a href="{% url 'chapter' chapter.id %}">{{ chapter.title }}</a></li>
+    {% endfor %}
+</ul>

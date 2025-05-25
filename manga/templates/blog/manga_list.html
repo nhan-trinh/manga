@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Danh sách Manga{% endblock %}
+
+{% block content %}
+    <h2>Danh sách Manga</h2>
+    <ul>
+        {% for manga in mangas %}
+            <li>
+                <a href="{% url 'detail' manga.id %}">
+                    <img src="{{ manga.cover.url }}" alt="{{ manga.title }}" style="height:100px;vertical-align:middle;margin-right:10px;">
+                    {{ manga.title }}
+                </a>
+            </li>
+        {% empty %}
+            <li>Chưa có manga nào.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

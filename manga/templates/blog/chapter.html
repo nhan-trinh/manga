@@ -1,0 +1,4 @@
+<h1>{{ chapter.title }}</h1>
+{% for page in chapter.pages.all %}
+    <img src="{{ page.image.url }}" style="width:100%;">
+{% endfor %}
