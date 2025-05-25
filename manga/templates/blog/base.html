@@ -14,6 +14,16 @@
         <a href="/">Trang chủ</a>
         <a href="/manga/">Manga</a>
         <a href="/about/">Giới thiệu</a>
+        {% if user.is_authenticated %}
+            <span>Chào, {{ user.username }}</span>
+            <a href="{% url 'logout' %}">Đăng xuất</a>
+            {% if user.is_superuser %}
+                <a href="/admin/">Quản trị</a>
+            {% endif %}
+        {% else %}
+            <a href="{% url 'login' %}">Đăng nhập</a>
+            <a href="{% url 'register' %}">Đăng ký</a>
+        {% endif %}
     </nav>
     <div class="container">
         {% block content %}{% endblock %}

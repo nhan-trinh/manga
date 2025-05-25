@@ -1,0 +1,11 @@
+<!-- filepath: e:\duanantruyen\manga_reader\manga\templates\blog\register.html -->
+{% extends "blog/base.html" %}
+{% block title %}Đăng ký{% endblock %}
+{% block content %}
+<h2>Đăng ký tài khoản</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Đăng ký</button>
+</form>
+{% endblock %}
